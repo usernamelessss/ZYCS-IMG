@@ -22,9 +22,9 @@
         <!--  </a>-->
         <!--</p>-->
       </section>
-      <section class="flex flex-col items-center gap-2">
-        <span class="w-full font-bold text-lg text-center">骤雨重山图床</span>
-      </section>
+      <!--<section class="flex flex-col items-center gap-2">-->
+      <!--  <span class="w-full font-bold text-lg text-center">骤雨重山图床</span>-->
+      <!--</section>-->
     </main>
   </footer>
 </template>
