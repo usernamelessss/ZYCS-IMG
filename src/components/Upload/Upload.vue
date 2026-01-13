@@ -94,11 +94,10 @@ const fileUpload = async (FileListArr: Array<any>) => {
     if (i.upload_status) return;
 
     // --- 新增：WebP 转 PNG 逻辑 ---
-    let fileToUpload = i;
 
     if (i.type === 'image/webp') {
       try {
-        fileToUpload = await convertWebpToPng(i);
+        i = await convertWebpToPng(i);
         // 如果转换成功，更新当前项的一些基本信息（可选）
         i.upload_status_msg = '已自动转换为 PNG';
       } catch (e) {
