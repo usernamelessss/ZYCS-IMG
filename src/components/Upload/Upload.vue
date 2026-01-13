@@ -100,6 +100,8 @@ const fileUpload = async (FileListArr: Array<any>) => {
         i = await convertWebpToPng(i);
         // 如果转换成功，更新当前项的一些基本信息（可选）
         i.upload_status_msg = '已自动转换为 PNG';
+
+        FileListArr[i] = i;
       } catch (e) {
         console.error('WebP 转换失败，尝试原样上传', e);
       }
