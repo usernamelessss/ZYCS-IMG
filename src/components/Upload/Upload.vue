@@ -90,7 +90,7 @@ const fileListChange = (v: Event, type: boolean = false) => {
 
 // 上传
 const fileUpload = async (FileListArr: Array<any>) => {
-  FileListArr.forEach(async (i: any) => {
+  FileListArr.forEach(async (i: any,index: number) => {
     if (i.upload_status) return;
 
     // --- 新增：WebP 转 PNG 逻辑 ---
@@ -101,7 +101,7 @@ const fileUpload = async (FileListArr: Array<any>) => {
         // 如果转换成功，更新当前项的一些基本信息（可选）
         i.upload_status_msg = '已自动转换为 PNG';
 
-        FileListArr[i] = i;
+        FileListArr[index] = i;
       } catch (e) {
         console.error('WebP 转换失败，尝试原样上传', e);
       }
