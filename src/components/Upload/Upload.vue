@@ -27,6 +27,42 @@ const { toast } = useToast();
 const props = defineProps(['modelValue', 'UploadConfig', 'uploadAPI']);
 const emits = defineEmits(['update:modelValue']);
 const UploadConfig = ref<any>(props.UploadConfig);
+
+/**
+ * 辅助函数：利用 Canvas 将 WebP File 对象转换为 PNG Blob
+ */
+const convertWebpToPng = (file: File): Promise<File> => {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = (e) => {
+      const img = new Image();
+      img.src = e.target?.result as string;
+      img.onload = () => {
+        const canvas = document.createElement('canvas');
+        canvas.width = img.width;
+        canvas.height = img.height;
+        const ctx = canvas.getContext('2d');
+        if (!ctx) return reject('Canvas context failed');
+
+        ctx.drawImage(img, 0, 0);
+
+        canvas.toBlob((blob) => {
+          if (blob) {
+            // 将 Blob 封装回 File 对象，保持文件名一致（后缀改为 png）
+            const newName = file.name.replace(/\.webp$/i, '.png');
+            const newFile = new File([blob], newName, { type: 'image/png' });
+            resolve(newFile);
+          } else {
+            reject('Blob conversion failed');
+          }
+        }, 'image/png');
+      };
+      img.onerror = reject;
+    };
+    reader.onerror = reject;
+  });
+};
 // 文件上传列表变化事件
 const fileListChange = (v: Event, type: boolean = false) => {
   let targetFileListArr: any = [];
@@ -56,6 +92,21 @@ const fileListChange = (v: Event, type: boolean = false) => {
 const fileUpload = async (FileListArr: Array<any>) => {
   FileListArr.forEach(async (i: any) => {
     if (i.upload_status) return;
+
+    // --- 新增：WebP 转 PNG 逻辑 ---
+    let fileToUpload = i;
+
+    if (i.type === 'image/webp') {
+      try {
+        await convertWebpToPng(i);
+        // 如果转换成功，更新当前项的一些基本信息（可选）
+        i.upload_status_msg = '已自动转换为 PNG';
+      } catch (e) {
+        console.error('WebP 转换失败，尝试原样上传', e);
+      }
+    }
+    // ----------------------------
+
     const formData = new FormData();
     formData.append('file', i);
     // 做图片预览blob======
