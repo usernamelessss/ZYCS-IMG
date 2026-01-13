@@ -94,8 +94,6 @@ const fileUpload = async (FileListArr: Array<any>) => {
     if (i.upload_status) return;
 
     // --- 新增：WebP 转 PNG 逻辑 ---
-    let fileToUpload = i;
-
     if (i.type === 'image/webp') {
       try {
         await convertWebpToPng(i);
