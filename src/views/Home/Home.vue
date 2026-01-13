@@ -48,9 +48,10 @@ const nodeHost = ref<string>(import.meta.env.VITE_IMG_API_URL || location.origin
 const uploadAPI = ref<string>(`${import.meta.env.VITE_IMG_API_URL || location.origin}/upload`);
 // 上传配置
 const UploadConfig = ref<any>({
-  AcceptTypes: 'image/*', // 允许上传的类型，使用逗号分隔
+  // AcceptTypes: 'image/*', // 允许上传的类型，使用逗号分隔
+  AcceptTypes: 'image/jpeg,image/png,image/gif,image/webp', // 允许上传的类型，使用逗号分隔
   Max: 0, //多选个数，0为不限制
-  MaxSize: 15, //单个文件大小限制，单位：MB
+  MaxSize: 100, //单个文件大小限制，单位：MB
 });
 // 上传列表
 const fileList = ref<Array<any>>(JSON.parse(localStorage.getItem('zychUpImageList') || '[]'));
