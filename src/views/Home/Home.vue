@@ -1,13 +1,19 @@
 <template>
   <section class="Home pt-4 sm:pt-6">
     <Alert class="pt-0 pb-2 sm:py-4">
-      <AlertTitle class="font-bold hidden sm:flex sm:gap-2"> <RocketIcon class="h-4 w-4 hidden sm:flex" /> Heads up!</AlertTitle>
-      <AlertDescription class="p-0 text-xs sm:text-sm">
-        <p class="pt-2">无限图片储存数量，你可以上传不限数量的图片！</p>
-        <p>图片首次访问后缓存，"永久"有效，包括全球分布的 CDN，以确保尽可能快地提供图像.</p>
-        <p>骤雨重山图床 是 <a class="text-slate-400" href="https://www.vvhan.com" target="_blank" title="韩小韩博客">韩小韩博客</a> 支持并维护的文件上传项目，致力于为用户提供稳定的永久存储服务。</p>
-        <p style="font-weight: bold">开源地址: <a class="text-[#0969da]" href="https://github.com/uxiaohan/ZYCS-IMG" target="_blank">ZYCS-IMG</a></p>
-      </AlertDescription>
+      <!--<AlertTitle class="font-bold hidden sm:flex sm:gap-2"> <RocketIcon class="h-4 w-4 hidden sm:flex" /> Heads up!</AlertTitle>-->
+      <!--<AlertDescription class="p-0 text-xs sm:text-sm">-->
+      <!--  <p class="pt-2">无限图片储存数量，你可以上传不限数量的图片！</p>-->
+      <!--  <p>图片首次访问后缓存，"永久"有效，包括全球分布的 CDN，以确保尽可能快地提供图像.</p>-->
+      <!--  <p>骤雨重山图床 是 <a class="text-slate-400" href="https://www.vvhan.com" target="_blank" title="韩小韩博客">韩小韩博客</a> 支持并维护的文件上传项目，致力于为用户提供稳定的永久存储服务。</p>-->
+      <!--  <p style="font-weight: bold">开源地址: <a class="text-[#0969da]" href="https://github.com/uxiaohan/ZYCS-IMG" target="_blank">ZYCS-IMG</a></p>-->
+      <!--</AlertDescription>-->
+
+      <img
+        src="https://wp-cdn.4ce.cn/v2/b1d5nU7.jpeg"
+        alt="😄"
+        class="w-full h-auto rounded-md mt-2"
+      />
     </Alert>
 
     <!-- 工具栏 -->
@@ -19,8 +25,8 @@
             <span>Imgur</span>
           </Label>
           <Label for="nosync">
-            <RadioGroupItem id="nosync" value="nosync" disabled />
-            <span class="text-gray-300">待定</span>
+            <!--<RadioGroupItem id="nosync" value="nosync" disabled />-->
+            <!--<span class="text-gray-300">待定</span>-->
           </Label>
         </RadioGroup>
       </div>
