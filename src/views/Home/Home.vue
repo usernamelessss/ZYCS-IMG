@@ -9,11 +9,7 @@
       <!--  <p style="font-weight: bold">开源地址: <a class="text-[#0969da]" href="https://github.com/uxiaohan/ZYCS-IMG" target="_blank">ZYCS-IMG</a></p>-->
       <!--</AlertDescription>-->
 
-      <img
-        src="https://wp-cdn.4ce.cn/v2/b1d5nU7.jpeg"
-        alt="😄"
-        class="w-full h-auto rounded-md mt-2"
-      />
+      <img src="https://image.renjianyong.dpdns.org/v2/ExjiQZV.jpeg" alt="😄" class="w-full h-auto rounded-md mt-2" />
     </Alert>
 
     <!-- 工具栏 -->
