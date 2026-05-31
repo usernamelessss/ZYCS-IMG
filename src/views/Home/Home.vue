@@ -9,7 +9,7 @@
       <!--  <p style="font-weight: bold">开源地址: <a class="text-[#0969da]" href="https://github.com/uxiaohan/ZYCS-IMG" target="_blank">ZYCS-IMG</a></p>-->
       <!--</AlertDescription>-->
 
-      <img src="https://file.server.renjianyong.dpdns.org/file/BQACAgEAAyEFAASfuoapAAIJLGoX7qs4QJLnxOSrz253oivs4hXuAAI2CQACWjjBRFp9z-q4-Y97OwQ.jpg" alt="😄" class="w-full h-auto rounded-md mt-2" />
+      <img src="https://iili.io/C3VIvMg.jpg" alt="😄" class="w-full h-auto rounded-md mt-2" />
     </Alert>
 
     <!-- 工具栏 -->
